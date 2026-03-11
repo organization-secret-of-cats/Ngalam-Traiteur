@@ -1,62 +1,46 @@
 import { useEffect, useState } from 'react';
-import { Utensils, X } from 'lucide-react';
+import { ChefHat, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import styles from './DishesSection.module.css'
+import { dishes } from '../data/dishes';
 
-interface Dish {
+type Category =
+  | 'Plats principaux'
+  | 'Cocktails'
+  | 'Entrées et salades'
+  | 'Desserts et Pièces montées';
+
+export interface Dish {
   id: number;
   name: string;
-  category: string;
+  category: Category;
   image: string;
-  description: string;
 }
 
-const dishes: Dish[] = [
-  {
-    id: 1,
-    name: 'Saumon en Croûte',
-    category: 'Poisson',
-    image: 'https://images.pexels.com/photos/3551717/pexels-photo-3551717.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Saumon frais en croûte de pâte feuilletée avec épinards',
-  },
-  {
-    id: 2,
-    name: 'Filet de Bœuf',
-    category: 'Viande',
-    image: 'https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Filet de bœuf tendre accompagné de sa sauce au poivre',
-  },
-  {
-    id: 3,
-    name: 'Plateau de Fromages',
-    category: 'Fromages',
-    image: 'https://images.pexels.com/photos/821365/pexels-photo-821365.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Sélection de fromages français affinés',
-  },
-  {
-    id: 4,
-    name: 'Tartelettes Salées',
-    category: 'Entrées',
-    image: 'https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Assortiment de tartelettes aux saveurs variées',
-  },
-  {
-    id: 5,
-    name: 'Pavlova aux Fruits',
-    category: 'Desserts',
-    image: 'https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Meringue croustillante garnie de fruits frais',
-  },
-  {
-    id: 6,
-    name: 'Verrines Gourmandes',
-    category: 'Entrées',
-    image: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800',
-    description: 'Verrines créatives pour vos apéritifs',
-  },
+const categories: Category[] = [
+  'Plats principaux',
+  'Cocktails',
+  'Entrées et salades',
+  'Desserts et Pièces montées',
 ];
 
 export default function DishesSection() {
   const [selectedDish, setSelectedDish] = useState<Dish | null>(null);
+
+  const [visibleCount, setVisibleCount] = useState<Record<string, number>>({
+    'Plats principaux': 6,
+    'Cocktails': 6,
+    'Entrées et salades': 6,
+    'Desserts': 6,
+    'Pièces montées': 6,
+  });
+
+  const showMore = (category: Category) => {
+    setVisibleCount((prev) => ({
+      ...prev,
+      [category]: prev[category] + 6,
+    }));
+  };
 
   useEffect(() => {
     if (!selectedDish) return;
@@ -81,7 +65,7 @@ export default function DishesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
-            <Utensils className="text-amber-700" size={48} />
+            <ChefHat className="text-amber-700" size={48} />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Nos Plats Signature
@@ -91,31 +75,57 @@ export default function DishesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {dishes.map((dish) => (
-            <button
-              key={dish.id}
-              type="button"
-              onClick={() => setSelectedDish(dish)}
-              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 text-left w-full focus:outline-none focus:ring-4 focus:ring-amber-300"
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={dish.image}
-                  alt={dish.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
+        <div>
+          {categories.map((category, index) => {
+            const filtered = dishes.filter((d) => d.category === category);
+            if (filtered.length === 0) return null;
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6">
-                <span className="text-amber-400 text-sm font-semibold mb-2">
-                  {dish.category}
-                </span>
-                <h3 className="text-white text-2xl font-bold mb-2">{dish.name}</h3>
-                <p className="text-gray-200">{dish.description}</p>
+            const visible = filtered.slice(0, visibleCount[category]);
+
+            return (
+              <div key={index} className="mb-20">
+                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                  {category}
+                </h3>
+
+                <div className={styles.masonry}>
+                  {visible.map((dish, index2) => (
+                    <motion.button
+                      layout
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.35 }}
+                      key={index2}
+                      onClick={() => setSelectedDish(dish)}
+                      className={styles['masonry-item'] + ' min-h-[260px] group relative overflow-hidden rounded-xl'}
+                    >
+                      <img
+                        src={`/photos/1/${dish.image}`}
+                        alt={dish.name}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+
+                      <div className="absolute inset-0 flex items-end p-5 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition">
+                        <h4 className="text-white text-xl font-semibold tracking-wide">{dish.name}</h4>
+                      </div>
+                    </motion.button>
+                  ))}
+                </div>
+
+                {visible.length < filtered.length && (
+                  <div className="text-center mt-6">
+                    <button
+                      onClick={() => showMore(category)}
+                      className="mt-4 px-8 py-3 rounded-full bg-amber-700 text-white font-medium tracking-wide hover:bg-amber-800 hover:scale-105 transition"
+                    >
+                      Afficher plus
+                    </button>
+                  </div>
+                )}
               </div>
-            </button>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -148,7 +158,7 @@ export default function DishesSection() {
               <div className="overflow-hidden rounded-2xl bg-white shadow-2xl">
                 <div className="bg-black">
                   <img
-                    src={selectedDish.image}
+                    src={`/photos/1/${selectedDish.image}`}
                     alt={selectedDish.name}
                     className="w-full max-h-[55vh] sm:max-h-[70vh] object-contain"
                   />
@@ -161,9 +171,6 @@ export default function DishesSection() {
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                     {selectedDish.name}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base">
-                    {selectedDish.description}
-                  </p>
                 </div>
               </div>
             </motion.div>

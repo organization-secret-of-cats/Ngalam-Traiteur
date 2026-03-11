@@ -3,21 +3,19 @@
 import { useRef } from "react";
 import Header from "@/src/components/Header";
 import Carousel from "@/src/components/Carousel";
-import MenusSection from "@/src/components/MenusSection";
 import DishesSection from "@/src/components/DishesSection";
 import ContactSection from "@/src/components/ContactSection";
 import Footer from "@/src/components/Footer";
+import Services from "@/src/components/Services";
 
 export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
-  const menusRef = useRef<HTMLDivElement>(null);
   const dishesRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const handleNavigate = (section: string) => {
     const refs = {
       home: homeRef,
-      menus: menusRef,
       dishes: dishesRef,
       contact: contactRef,
     };
@@ -40,10 +38,14 @@ export default function Home() {
       <main className="pt-20">
         <div ref={homeRef}>
           <Carousel />
-        </div>
 
-        <div ref={menusRef}>
-          <MenusSection />
+          <section className="bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <Services />
+              </div>
+            </div>
+          </section>
         </div>
 
         <div ref={dishesRef}>

@@ -1,0 +1,183 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/DishesSection.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.DishesSection_masonry__K8g4T {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.DishesSection_masonry-item__tN3iE {
+  grid-column: span 4;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.DishesSection_masonry-item__tN3iE:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.DishesSection_masonry-item__tN3iE:nth-child(5n) {
+  grid-row: span 2;
+}
+
+.DishesSection_masonry-item__tN3iE:nth-child(7n) {
+  grid-column: span 6;
+}
+
+@media (max-width: 1024px) {
+  .DishesSection_masonry__K8g4T {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .DishesSection_masonry-item__tN3iE {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .DishesSection_masonry__K8g4T {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .DishesSection_masonry-item__tN3iE {
+    grid-column: span 2;
+  }
+}
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/ContactSection.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+.ContactSection_wrapper__BgCc9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.ContactSection_circle__p6NMW {
+    width: 95px;
+    height: 95px;
+    background: #fff;
+    color: #b45309;
+    border-radius: 9999px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-weight: 600;
+    padding: 8px;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    border: 5px solid #cccccc;
+}
+
+.ContactSection_icon__klPu4 {
+    margin-bottom: 4px;
+    width: 80%;
+    height: 80%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    pointer-events: none;
+}
+
+.ContactSection_item__plmd_ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ContactSection_label__FPH9U {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+@media (min-width: 640px) {
+    .ContactSection_circle__p6NMW {
+        width: 120px;
+        height: 120px;
+    }
+
+    .ContactSection_label__FPH9U {
+        font-size: 14px;
+    }
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/Services.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.Services_wrapper__MYKbM {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.Services_circle__4_sBZ {
+    width: 95px;
+    height: 95px;
+    background: #fff;
+    color: #b45309;
+    border-radius: 9999px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-weight: 600;
+    padding: 8px;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    border: 5px solid #cccccc;
+}
+
+.Services_icon__5CDQx {
+    margin-bottom: 4px;
+    width: 80%;
+    height: 80%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    pointer-events: none;
+}
+
+.Services_item__ThMlP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.Services_label__4sWt7 {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+@media (min-width: 640px) {
+    .Services_circle__4_sBZ {
+        width: 120px;
+        height: 120px;
+    }
+
+    .Services_label__4sWt7 {
+        font-size: 14px;
+    }
+}

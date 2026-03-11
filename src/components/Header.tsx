@@ -10,7 +10,6 @@ export default function Header({ onNavigate }: HeaderProps) {
 
   const navItems = [
     { label: 'Accueil', value: 'home' },
-    { label: 'Nos Menus', value: 'menus' },
     { label: 'Nos Plats', value: 'dishes' },
     { label: 'Contact', value: 'contact' },
   ];

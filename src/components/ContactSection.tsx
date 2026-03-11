@@ -1,7 +1,11 @@
 "use client";
 
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState, FormEvent } from "react";
+import styles from './ContactSection.module.css'
+
+import ICON_CARD from "../icons/card.png";
+import ICON_MONEY from "../icons/money.png";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -73,11 +77,11 @@ export default function ContactSection() {
     <section className="py-20 bg-gradient-to-b from-amber-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Contactez-Nous
+          <h2 className="text-4xl md:text-5xl font-bold text-amber-700 mb-4">
+            Faites votre
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Parlons de votre événement et créons ensemble un moment inoubliable
+          <p className="text-4xl text-black font-bold max-w-2xl mx-auto">
+            Réservation
           </p>
         </div>
 
@@ -104,8 +108,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                  <p className="text-gray-600">contact@ledelice-traiteur.fr</p>
-                  <p className="text-gray-600">info@ledelice-traiteur.fr</p>
+                  <p className="text-gray-600">ndiayeaboubakry@gmail.com</p>
                 </div>
               </div>
 
@@ -121,12 +124,30 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-amber-50 rounded-lg border-l-4 border-amber-600">
-              <h4 className="font-semibold text-gray-900 mb-2">Horaires d'Ouverture</h4>
-              <div className="space-y-1 text-gray-600">
-                <p>Lundi - Vendredi: 9h00 - 18h00</p>
-                <p>Samedi: 10h00 - 16h00</p>
-                <p>Dimanche: Sur rendez-vous</p>
+            <div style={{ marginTop: 30 }}>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Modalités de paiement
+              </h3>
+              <p className="text-gray-600 max-w-2xl mx-auto" style={{ marginTop: -20 }}>
+                Uniquement sur devis.
+              </p>
+
+              <div className="space-y-6">
+                <div className={styles.wrapper}>
+                  <div className={styles.item}>
+                    <div className={styles.circle}>
+                      <img src={ICON_MONEY.src} alt="Espèces" className={styles.icon} />
+                    </div>
+                    <span className={styles.label}>Espèces</span>
+                  </div>
+
+                  <div className={styles.item}>
+                    <div className={styles.circle}>
+                      <img src={ICON_CARD.src} alt="Virement bancaire" className={styles.icon} />
+                    </div>
+                    <span className={styles.label}>Virement bancaire</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
