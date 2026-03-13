@@ -20,16 +20,27 @@ export default function Footer() {
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Rapide</h4>
-            <div className="flex gap-4">
-              <span
-                className="flex items-center text-gray-400"
-              >
+            <div className="flex flex-col sm:flex-row gap-4">
+              <span className="flex items-center text-gray-400">
                 <Phone size={18} className="mr-2" />
-                <span className="flex gap-2 items-center flex-col">
-                  <a href="tel:+33666030342" className="text-gray-400 hover:text-amber-500 transition-colors"> +33 6 66 03 03 42</a>
-                  <a href="tel:+33626767523" className="text-gray-400 hover:text-amber-500 transition-colors"> +33 6 26 76 75 23</a>
+
+                <span className="flex flex-col gap-1">
+                  <a
+                    href="tel:+33666030342"
+                    className="text-gray-400 hover:text-amber-500 transition-colors"
+                  >
+                    +33 6 66 03 03 42
+                  </a>
+
+                  <a
+                    href="tel:+33626767523"
+                    className="text-gray-400 hover:text-amber-500 transition-colors"
+                  >
+                    +33 6 26 76 75 23
+                  </a>
                 </span>
               </span>
+
               <a
                 href="mailto:ndiayeaboubakry@gmail.com"
                 className="flex items-center text-gray-400 hover:text-amber-500 transition-colors"
