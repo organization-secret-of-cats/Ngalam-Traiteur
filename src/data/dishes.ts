@@ -73,13 +73,6 @@ export const dishes: Dish[] = [
     image: 'NGALAM-TRAITEUR-20230902-190002-jpg.jpg',
   }, 
   {
-    id: 12,
-    name: 'Variété mzzé libanais',
-    category: 'Entrées et salades',
-    image: 'NGALAM-TRAITEUR-20230805-222818-jpg.jpg',
-  },
-  
-  {
     id: 13,
     name: 'Poulet coco curry',
     category: 'Plats principaux',
@@ -120,5 +113,52 @@ export const dishes: Dish[] = [
     name: '',
     category: 'Plats principaux',
     image: 'NGALAM-TRAITEUR-IMG-20230717-WA0067-jpg.jpg',
+  },
+  {
+    id: 21,
+    name: 'Macarons',
+    category: 'Desserts et Pièces montées',
+    image: 'NGALAM-TRAITEUR-20230902-223023-jpg.jpg',
+  }, 
+  {
+    id: 22,
+    name: 'Plateau de fruits royal',
+    category: 'Desserts et Pièces montées',
+    image: 'NGALAM-TRAITEUR-20230903-003425-jpg.jpg',
+  }, 
+  {
+    id: 23,
+    name: '',
+    category: 'Desserts et Pièces montées',
+    image: '20220910_223659.jpg',
+  },
+
+    {
+    id: 26,
+    name: 'Gateau Royal',
+    category: 'Desserts et Pièces montées',
+    image: '20230102_001236.jpg',
+  },
+
+  {
+    id: 25,
+    name: 'Brownie',
+    category: 'Desserts et Pièces montées',
+    image: '20221029_224921.jpg',
+  },
+  {
+    id: 28,
+    name: '',
+    category: 'Desserts et Pièces montées',
+    image: '20230603_170736.jpg',
+  },
+  {
+    id: 27,
+    name: '',
+    category: 'Entrées et salades',
+    image: '20220608_182022.jpg',
   }
+
 ];
+
+
