@@ -276,7 +276,7 @@ export default function ContactSection() {
               <div className="space-y-4">
                 {[
                   { Icon: Phone, label: "Téléphone", value: "+33 6 66 03 03 42", href: "tel:+33666030342" },
-                  { Icon: Phone, label: "WhatsApp", value: "+33 6 26 76 75 23", href: "tel:+33626767523" },
+                  { Icon: Phone, label: "Téléphone", value: "+33 6 26 76 75 23", href: "tel:+33626767523" },
                   { Icon: Mail, label: "Email", value: "ndiayeaboubakry@gmail.com", href: "mailto:ndiayeaboubakry@gmail.com" },
                   { Icon: MapPin, label: "Adresse", value: "4 Chemin des princes\n78870 Bailly, France", href: undefined },
                 ].map(({ Icon, label, value, href }) => (
