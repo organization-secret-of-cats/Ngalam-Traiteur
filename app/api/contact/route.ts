@@ -70,7 +70,7 @@ async function sendEmail(
       await transporter.sendMail({
       from: `"Ngalam Traiteur" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: `✨ Demande reçue — Ngalam Traiteur`,
+      subject: `Demande reçue Ngalam Traiteur`,
       html: `
     <!DOCTYPE html>
     <html lang="fr">
