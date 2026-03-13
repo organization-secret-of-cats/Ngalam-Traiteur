@@ -7,16 +7,19 @@ import DishesSection from "@/src/components/DishesSection";
 import ContactSection from "@/src/components/ContactSection";
 import Footer from "@/src/components/Footer";
 import Services from "@/src/components/Services";
+import AboutSection from "@/src/components/AboutSection";
 
 export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
   const dishesRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const handleNavigate = (section: string) => {
     const refs = {
       home: homeRef,
       dishes: dishesRef,
+      about: aboutRef,
       contact: contactRef,
     };
 
@@ -50,6 +53,10 @@ export default function Home() {
 
         <div ref={dishesRef}>
           <DishesSection />
+        </div>
+
+        <div ref={aboutRef}>
+          <AboutSection />
         </div>
 
         <div ref={contactRef}>

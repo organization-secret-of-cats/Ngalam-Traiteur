@@ -3,6 +3,7 @@ import { ChefHat, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import styles from './DishesSection.module.css'
 import { dishes } from '../data/dishes';
+import Image from 'next/image';
 
 type Category =
   | 'Plats principaux'
@@ -61,7 +62,7 @@ export default function DishesSection() {
   }, [selectedDish]);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="pt-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
@@ -99,13 +100,13 @@ export default function DishesSection() {
                       onClick={() => setSelectedDish(dish)}
                       className={styles['masonry-item'] + ' min-h-[260px] group relative overflow-hidden rounded-xl'}
                     >
-                      <img
+                      <Image
                         src={`/photos/1/${dish.image}`}
                         alt={dish.name}
                         loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        fill
                       />
-
                       <div className="absolute inset-0 flex items-end p-5 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition">
                         <h4 className="text-white text-xl font-semibold tracking-wide">{dish.name}</h4>
                       </div>

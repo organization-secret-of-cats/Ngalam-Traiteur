@@ -1,6 +1,8 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
+import ICON_SERVICE from "../icons/service.png";
+
 interface HeaderProps {
   onNavigate: (section: string) => void;
 }
@@ -11,6 +13,7 @@ export default function Header({ onNavigate }: HeaderProps) {
   const navItems = [
     { label: 'Accueil', value: 'home' },
     { label: 'Nos Plats', value: 'dishes' },
+    { label: 'À propos', value: 'about' },
     { label: 'Contact', value: 'contact' },
   ];
 
@@ -25,8 +28,9 @@ export default function Header({ onNavigate }: HeaderProps) {
         <div className="flex justify-between items-center h-20">
           <button
             onClick={() => handleNavClick('home')}
-            className="text-2xl font-bold text-amber-700 hover:text-amber-600 transition-colors"
+            className="text-2xl font-bold text-amber-700 hover:text-amber-600 transition-colors flex items-center"
           >
+            <img src={ICON_SERVICE.src} alt="Ngalam Traiteur" className="h-12 w-12 mr-2" />
             Ngalam Traiteur
           </button>
 
@@ -37,7 +41,7 @@ export default function Header({ onNavigate }: HeaderProps) {
                 onClick={() => handleNavClick(item.value)}
                 className="text-gray-700 hover:text-amber-700 font-medium transition-colors"
               >
-                {item.label}
+                <span className={`${item.value === "contact" ? "text-white bg-amber-700 px-3 py-1 rounded-full" : ""}`}>{item.label}</span>
               </button>
             ))}
           </nav>
@@ -58,9 +62,9 @@ export default function Header({ onNavigate }: HeaderProps) {
               <button
                 key={item.value}
                 onClick={() => handleNavClick(item.value)}
-                className="block w-full text-left text-gray-700 hover:text-amber-700 font-medium py-2 transition-colors"
+                className={`block w-full text-left text-gray-700 hover:text-amber-700 font-medium py-2 transition-colors`}
               >
-                {item.label}
+                <span className={`${item.value === "contact" ? "text-white bg-amber-700 px-3 py-1 rounded-full" : ""}`}>{item.label}</span>
               </button>
             ))}
           </nav>
