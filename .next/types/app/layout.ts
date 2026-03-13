@@ -1,4 +1,4 @@
-// File: /home/luffy/Documents/organization-secret-of-cats/Ngalam-Traiteur/app/layout.tsx
+// File: C:\Users\dckje\Desktop\organization-secret-of-cats\Ngalam-Traiteur\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

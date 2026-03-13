@@ -99,6 +99,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Téléphone</h4>
                   <p className="text-gray-600">+33 6 66 03 03 42</p>
+                  <p className="text-gray-600">+33 6 26 76 75 23</p>
                 </div>
               </div>
 

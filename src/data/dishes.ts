@@ -9,7 +9,7 @@ export const dishes: Dish[] = [
   },
   {
     id: 2,
-    name: '',
+    name: 'Assortiment de mézzés libanais',
     category: 'Entrées et salades',
     image: 'NGALAM-TRAITEUR-20230805-220219-jpg.jpg',
   },
@@ -128,7 +128,7 @@ export const dishes: Dish[] = [
   }, 
   {
     id: 23,
-    name: '',
+    name: 'Tarte aux amandes',
     category: 'Desserts et Pièces montées',
     image: '20220910_223659.jpg',
   },
@@ -148,17 +148,16 @@ export const dishes: Dish[] = [
   },
   {
     id: 28,
-    name: '',
+    name: 'Tartelettes aux amandes avec pancacotta caramal',
     category: 'Desserts et Pièces montées',
     image: '20230603_170736.jpg',
   },
   {
     id: 27,
-    name: '',
+    name: 'Assortiment de vérines',
     category: 'Entrées et salades',
     image: '20220608_182022.jpg',
   }
-
 ];
 
 
