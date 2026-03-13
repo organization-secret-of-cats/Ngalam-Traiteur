@@ -102,7 +102,7 @@ export default function DishesSection() {
                     >
                       <Image
                         src={`/photos/1/${dish.image}`}
-                        alt={dish.name}
+                        alt={dish.name || 'Plat'}
                         loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         fill
