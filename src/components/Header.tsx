@@ -1,7 +1,7 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
-import ICON_SERVICE from "../icons/service.png";
+import ICON_SERVICE from "../assets/logo.png";
 
 interface HeaderProps {
   onNavigate: (section: string) => void;
@@ -28,7 +28,7 @@ export default function Header({ onNavigate }: HeaderProps) {
         <div className="flex justify-between items-center h-20">
           <button
             onClick={() => handleNavClick('home')}
-            className="text-2xl font-bold text-amber-700 hover:text-amber-600 transition-colors flex items-center"
+            className="text-2xl font-bold text-amber-600 hover:text-amber-500 transition-colors flex items-center"
           >
             <img src={ICON_SERVICE.src} alt="Ngalam Traiteur" className="h-12 w-12 mr-2" />
             Ngalam Traiteur
